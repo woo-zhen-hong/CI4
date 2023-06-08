@@ -10,6 +10,16 @@ $routes = Services::routes();
  * Router Setup
  * --------------------------------------------------------------------
  */
+// Get all todo. (Read)
+$routes->get('todo','TodoListController::index');
+// Get single todo. (Read)
+$routes->get('todo/(:num)','TodoListController::show/$1');
+// Add a new todo. (Create)
+$routes->post('todo','TodoListController::create');
+// Update a todo data. (Update)
+$routes->put('todo/(:num)','TodoListController::update/$1');
+// Delete a todo. (Delete)
+$routes->delete('todo/(:num)','TodoListController::delete/$1');
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
