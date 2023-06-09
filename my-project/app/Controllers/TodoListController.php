@@ -29,7 +29,7 @@ class TodoListController extends BaseController
      */
     public function view()
     {
-        return view('TodoList');
+        return view('todo');
     }
 
     /**

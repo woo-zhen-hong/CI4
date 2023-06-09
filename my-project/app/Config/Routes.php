@@ -10,6 +10,14 @@ $routes = Services::routes();
  * Router Setup
  * --------------------------------------------------------------------
  */
+$routes->setDefaultNamespace('App\Controllers');
+$routes->setDefaultController('loginController');
+$routes->get('/', 'loginController::index');
+$routes->post('save', 'loginController::save');
+$routes->get('login', 'loginController::login');
+$routes->post('postLogin', 'loginController::auth');
+$routes->get('logout', 'loginController::logout');
+$routes->get('dashboard', 'loginController::dashboard');
 // Get all todo. (Read)
 $routes->get('todo','TodoListController::index');
 // Get single todo. (Read)
